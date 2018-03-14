@@ -1,2 +1,2 @@
-# AffWise token
+# Affwise token
 AFW token project
