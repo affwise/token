@@ -14,4 +14,14 @@ contract AffwiseToken is StandardToken, Pausable {
         totalSupply = _totalSupply;
         balances[msg.sender] = _totalSupply
     }
+    
+    function transfer(address _to, uint256 _value) public whenNotPaused withValidTo returns (bool) {
+        return super.transfer(_to, _value);
+    }
+
+    modifier withValidTo(address _to) {
+        require(_to != address(0x0));
+        require(_to != address(this));
+        _;
+    }
 }
