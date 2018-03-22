@@ -9,7 +9,7 @@ contract AffwiseToken is StandardToken, Pausable {
   string public constant symbol = "AFW";
   uint32 public constant decimals = 18;
 
-  function AffwiseToken(uint _totalSupply) public {
+  function AffwiseToken(uint256 _totalSupply) public {
     require(_totalSupply > 0);
     totalSupply_ = _totalSupply;
     balances[msg.sender] = _totalSupply;
